@@ -85,6 +85,45 @@ function addClasses(text, language){
             }
             text = tokens.join('');        
             break;            
+        case 'csharp':
+            tokenRegex = /(\@[a-zA-Z_][a-zA-Z0-9_]*)|\/\*.*\*\/|\/\/.*|(\+|\-|\*\*|\*|\/\/|\/|\^|%%|%\/%|<-|->|=|&&?|\|\|?|!|<=?|>=?|\+=|\-=|\*=|\/=|\/\/=|%=|\*\*=|==|!=|<|>|\,|\;|\&|\~|<<|>>|:|::|:::|\.\.\.|\.|%in%|~|\$|@|\(|\)|\[|\]|\{|\}|\"[^\"]*\"|\'[^\']*\'|[\"]{3}[^\"]*[\"]{3})|([0-9][\.0-9]*[e][\-]*[0-9]|[0-9]+L|[0-9]+\.[0-9]+|[0-9]+)|(#.*$)|([a-zA-Z_][a-zA-Z0-9_]*)|\s+/gm;
+            tokens = text.match(tokenRegex);
+            for (let i = 0; i < tokens.length; i++) {
+                let token = tokens[i];
+                if (/^\s+$/.test(token) || token == undefined || token == '' || token == ' ') {
+                    continue;
+                } else if (/^([0x][0-9|A-F]+|[0o][0-7]+|[0b][0|1]+|[-]?[0-9]+[j]|[-]?[0-9][\.0-9]*[e][\-]*[0-9]|[-]?[0-9]+\.[0-9]+|[-]?[0-9]+)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_number">${token}</span>`;
+                } else if (/^(\+|\-|\*|\/|\^|%%|%\/%|<-|->|\;|\.|<|>|\,|\&|\~|<<|>>|\.|\*\*|\/\/|=|&&?|\|\|?|!|<=?|>=?|\+=|\-=|\*=|\/=|\/\/=|%=|\*\*=|==|!=|:|::|:::|%in%|~|\$|@)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_operator">${token}</span>`;
+                } else if (/^(if|else|switch|case|default|for|foreach|while|do|break|continue|goto|return|yield|try|catch|finally|throw|public|private|protected|internal|protected internal|private protected|abstract|sealed|virtual|override|static|readonly|const|async|await|volatile|unsafe|new|partial|ref|out|in|class|struct|interface|enum|extends|implements|this|base|new|fixed|sizeof|stackalloc|from|where|select|group|join|into|orderby|let|in|on|equals|add|remove|get|set|value|global|const)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_keyword">${token}</span>`;
+                } else if (/^(int|float|double|decimal|bool|char|string|byte|sbyte|short|ushort|long|ulong|object|void|dynamic|nullable|true|false)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_dataType">${token}</span>`;
+                } else if (/^(null|NA|NaN|Inf)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_constant">${token}</span>`;
+                } else if (/^(print|len|input|range|open|map|filter|zip|sorted|sum|min|max|abs|round|int|float|str|type|id|dir|help|isinstance)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_function">${token}</span>`;
+                } else if (/^(\(|\))$/.test(token)) {
+                    tokens[i] = `<span class="highlight_parentheses">${token}</span>`;
+                } else if (/^(\[|\])$/.test(token)) {
+                    tokens[i] = `<span class="highlight_brackets">${token}</span>`;
+                } else if (/^(\{|\})$/.test(token)) {
+                    tokens[i] = `<span class="highlight_braces">${token}</span>`;
+                } else if (/^(\'[^\"]*\'|\"[^\"]*\")$/.test(token)) {
+                    tokens[i] = `<span class="highlight_string">${token}</span>`;
+                } else if (/^(#.*$|\/\*.*\*\/|\/\/.*)$/.test(token)) {
+                    tokens[i] = `<span class="highlight_comment">${token}</span>`;
+                } else if(/^(namespace|using|assembly|extern)$/.test(token)){
+                    tokens[i] = `<span class="highlight_module">${token}</span>`;
+                } else if(/^(delegate|event)$/.test(token)){
+                    tokens[i] = `<span class="highlight_decorator">${token}</span>`;
+                } else if (/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(token)) {
+                    tokens[i] = `<span class="highlight_variable">${token}</span>`;
+                }
+            }
+            text = tokens.join('');        
+            break;            
         case 'sql':
             tokenRegex = /(\@[a-zA-Z_][a-zA-Z0-9_]*)|[-]{2}.*$|\/\*.*\*\/|(\+|\-|\*\*|\*|\/\/|\/|\^|%%|%\/%|<-|->|=|&&?|\|\|?|!|<=?|>=?|\+=|\-=|\*=|\/=|\/\/=|%=|\*\*=|==|!=|<|>|\,|\;|\&|\~|<<|>>|:|::|:::|\.\.\.|\.|%in%|~|\$|@|\(|\)|\[|\]|\{|\}|\"[^\"]*\"|\'[^\']*\'|[\"]{3}[^\"]*[\"]{3})|([0-9][\.0-9]*[e][\-]*[0-9]|[0-9]+L|[0-9]+\.[0-9]+|[0-9]+)|(#.*$)|([a-zA-Z_][a-zA-Z0-9_]*)|\s+/gm;
             tokens = text.match(tokenRegex);
