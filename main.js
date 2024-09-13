@@ -183,6 +183,48 @@ function highlightCode(){
         else{
             console.error("No language detected.");
         }
-        nodes[i].innerHTML = codeText;//zaenkrat more biti koda direktno v 'pre', mogoce v prihodnosti malo bolj prijazen nacin
+        nodes[i].innerHTML = codeText; //TODO: doda zraven drugih child-ov tag-e, ne pa da vse povozi pa tega postavi
+    }
+}
+
+function highlightCodes(mainNode){
+    if(mainNode.getElementsByTagName('pre').length){
+        let nodes = mainNode.getElementsByTagName('pre');
+        for(let i = 0;i<nodes.length;i++){
+            let language = 0;
+            classlist = nodes[i].classList;
+            for(let j = 0;j<classlist.length;j++){
+                if(findLanguage(classlist[j])){
+                    language = classlist[j].substr(10).toLowerCase();
+                }
+            }
+            nodes[i] = addBaseClass(nodes[i]);
+            let codeText = nodes[i].innerText;
+            if(language){
+                codeText = addClasses(codeText, language);
+            }
+            else{
+                console.error("No language detected.");
+            }
+            nodes[i].innerHTML = codeText;
+        }   
+    } else{
+        let node = mainNode;
+        let language = 0;
+        classlist = node.classList;
+        for(let j = 0;j<classlist.length;j++){
+            if(findLanguage(classlist[j])){
+                language = classlist[j].substr(10).toLowerCase();
+            }
+        }
+        node = addBaseClass(node);
+        let codeText = node.innerText;
+        if(language){
+            codeText = addClasses(codeText, language);
+        } else{
+            console.error("No language detected.");
+        }
+        node.innerHTML = codeText;
+        return 
     }
 }
