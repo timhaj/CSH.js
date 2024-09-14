@@ -1,0 +1,86 @@
+/*You'll have to fill out the file before using it, because it is user specific :), otherwise use a premade template from other IDEs*/
+
+.highlight_base {
+    /*here you define the base layout (background color) and the base color if the language isn't supported*/
+    background-color: ;
+    font-size: 16px;
+    font-weight: 500;
+    color: ;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+}
+
+.highlight_comment {
+    /*color for comments, eg. //, /*, #,...*/
+    color: ;
+}
+
+.highlight_keyword {
+    /*color for reserved keywords, eg. if, for, return,...*/
+    color: ;
+}
+
+.highlight_operator {
+    /*arithmetic, logic & other operators*/
+    color: ;
+}
+
+.highlight_dataType {
+    /*color for the reserved keyword, specifying the data type of a variable, eg. int, float, ...*/
+    color: ;
+}
+
+.highlight_constant {
+    /*color for constants, eg. NULL, NaN,...*/
+    color: ;
+}
+
+.highlight_function {
+    /*color for build-in functions*/
+    color: ;
+}
+
+.highlight_specialSymbols {
+    /*color for special symbols, eg. _ or ... in python*/
+    color: ;
+}
+
+.highlight_parentheses {
+    /*color of ()*/
+    color: ;
+}
+
+.highlight_brackets {
+    /*color of []*/
+    color: ;
+}
+
+.highlight_braces {
+    /*color of {}*/
+    color: ;
+}
+
+.highlight_string {
+    /*color for string, eg. "", '', """, #, --, ...*/
+    color: ;
+}
+
+.highlight_number {
+    /*color for numbers*/
+    color: ;
+}
+
+.highlight_variable {
+    /*color for variable names*/
+    color: ;
+}
+
+.highlight_decorator {
+    /*color for decorators, eg. @property in python*/
+    color: ;
+}
+
+.highlight_module {
+    /*color for reserved keywords, specifying importing a builtin/external module, eg. import or from in python */
+    color: ;
+}
