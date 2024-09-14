@@ -10,4 +10,4 @@ CustomizableSyntaxHighlighter.js
 # TODO
 - Line numbers
 - Apply anywhere inside a 'pre' block, not directly in is
-- Currently VS Code highlighting, in future other bigger IDEs (jetbrains,...), maybe a template for user specific
+- More premade templates from bigger IDEs
