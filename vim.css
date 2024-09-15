@@ -1,0 +1,69 @@
+/*incase the language isn't supported, it still gets the base properties*/
+.highlight_base {
+    background-color: #201c24;
+    font-size: 16px;
+    font-weight: 500;
+    color: #bcbec4;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+}
+
+.highlight_comment {
+    color: #6272a4;
+}
+
+.highlight_keyword {
+    color: #ff79c6;
+}
+
+.highlight_operator {
+    color: #ff79c6;
+}
+
+.highlight_dataType {
+    color: #8be9fd;
+}
+
+.highlight_constant {
+    color: #bd93f9;
+}
+
+.highlight_function {
+    color: #50fa7b;
+}
+
+.highlight_specialSymbols {
+    color: #ff5555;
+}
+
+.highlight_parentheses {
+    color: #f8f8f2;
+}
+
+.highlight_brackets {
+    color: #f8f8f2;
+}
+
+.highlight_braces {
+    color: #f8f8f2;
+}
+
+.highlight_string {
+    color: #f1fa8c;
+}
+
+.highlight_number {
+    color: #bd93f9;
+}
+
+.highlight_variable {
+    color: #f8f8f2;
+}
+
+.highlight_decorator {
+    color: #ffb86c;
+}
+
+.highlight_module {
+    color: #ff79c6;
+}
