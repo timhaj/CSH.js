@@ -10,4 +10,3 @@ CustomizableSyntaxHighlighter.js
 # TODO
 - Line numbers
 - Apply anywhere inside a 'pre' block, not directly in is
-- More premade templates from bigger IDEs
