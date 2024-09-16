@@ -32,7 +32,8 @@ CustomizableSyntaxHighlighter.js
   2. Calling `highlightCodes(node)` will automatically select all `<pre>` tags in the node you passed in as an argument, and do the same as the line above.
   3. With `node = highlightCodes(node)` you can apply the syntax highlighting before the node is added to the document (dynamic).
 - After calling one of above ways, you get this result in your browser:
-  - dodej sliko primera
+
+![screenshot](result.png)
 
 # Currently supports the following languages (evolving list):
 - R
@@ -41,5 +42,4 @@ CustomizableSyntaxHighlighter.js
 - C#
 
 # TODO:
-- demo folder pa en example notri
-- slika primera malce zgoraj
+- demo folder pa en example notri, vse css file-e v svoj folder da bo lepse, uno slikco v demo folder
