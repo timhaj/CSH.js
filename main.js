@@ -187,13 +187,21 @@ function highlightCodes(mainNode){
         }
         node = addBaseClass(node);
         let codeText = node.innerText;
+        let div = getLineNums(codeText);
         if(language){
             codeText = addClasses(codeText, language);
         } else{
             console.error("No language detected.");
         }
-        node.innerHTML = codeText;
-        return 
+        let main = document.createElement('div');
+        main.append(div);
+        let div2 = document.createElement('div');
+        div2.innerHTML = codeText;
+        main.append(div2);
+        main.classList.add('highlight_base');
+        node.innerHTML = '';
+        node.append(main);
+        return node.innerHTML;
     }
 }
 
@@ -208,12 +216,35 @@ function handleMultiple(nodes){
         }
         nodes[i] = addBaseClass(nodes[i]);
         let codeText = nodes[i].innerText;
+        let div = getLineNums(codeText);
         if(language){
             codeText = addClasses(codeText, language);
         }
         else{
             console.error("No language detected.");
         }
-        nodes[i].innerHTML = codeText; //TODO: doda zraven drugih child-ov tag-e, ne pa da vse povozi pa tega postavi
+        let main = document.createElement('div');
+        main.append(div);
+        let div2 = document.createElement('div');
+        div2.innerHTML = codeText;
+        main.append(div2);
+        main.classList.add('highlight_base');
+        nodes[i].innerHTML = '';
+        nodes[i].append(main);
+        /* nodes[i].innerHTML = '<code>' + codeText + '</code>'; */ //TODO: doda zraven drugih child-ov tag-e, ne pa da vse povozi pa tega postavi
     }
+}
+
+function getLineNums(code){
+    let re = /\n/gm;
+    let lines = (code.match(re) || []).length;
+    let div = document.createElement('div');
+    div.classList.add('lineNums');
+    for(let i = 1;i<=lines;i++){
+        let x = document.createElement('span');
+        x.innerHTML = i;
+        div.append(x);
+        div.append(document.createElement('br'));
+    }
+    return div;
 }
