@@ -33,7 +33,7 @@ CustomizableSyntaxHighlighter.js
   3. With `node = highlightCodes(node)` you can apply the syntax highlighting before the node is added to the document (dynamic).
 - After calling one of above ways, you get this result in your browser:
 
-![screenshot](result.png)
+![screenshot](demo/result.png)
 
 ## Currently supports the following languages (evolving list):
 - R
