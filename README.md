@@ -35,11 +35,8 @@ CustomizableSyntaxHighlighter.js
 
 ![screenshot](result.png)
 
-# Currently supports the following languages (evolving list):
+## Currently supports the following languages (evolving list):
 - R
 - Python
 - SQL
 - C#
-
-# TODO:
-- demo folder pa en example notri, vse css file-e v svoj folder da bo lepse, uno slikco v demo folder
