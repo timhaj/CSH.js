@@ -1,11 +1,13 @@
 /*incase the language isn't supported, it still gets the base properties*/
 .highlight_base{
-    background-color: #201c24;
+    background-color: #1f1f1f;
     font-size: 16px;
     font-weight: 500;
     color: #bcbec4;
     margin: 0;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 5px 0px;
+    display: flex;
+    flex-direction: row;
 }
 
 .highlight_comment{
@@ -66,4 +68,12 @@
 
 .highlight_module{
     color: #c586c0;
+}
+
+.lineNums{
+    color: #6e7674;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    text-align: right;
 }
