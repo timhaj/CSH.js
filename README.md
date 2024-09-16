@@ -8,5 +8,4 @@ CustomizableSyntaxHighlighter.js
 - C#
 
 # TODO
-- Line numbers
 - Apply anywhere inside a 'pre' block, not directly in is
