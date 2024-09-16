@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSH.js demo</title>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./VSCode.css">
+</head>
+<body>
+    <pre class="highlight_python">
+    def factorial(n):
+        if n == 0 or n == 1:
+            return 1
+        return n * factorial(n - 1)
+
+    def main():
+        try:
+            num = int(input("Enter a number: "))
+            print(f"Factorial of {num} is {factorial(num)}")
+        except ValueError:
+            print("Please enter a valid integer.")
+
+    if __name__ == "__main__":
+        main()
+    </pre>
+
+    <br>
+
+    <div id="dynamic"></div>
+
+    <button onclick="dynamicExample()">Add code!</button>
+
+    <script>
+        highlightCode(); //will automatically highlight the code on page load
+
+        function dynamicExample(){ //highlights the div you specify
+            let div = document.getElementById('dynamic');
+            div.classList.add('highlight_SQL')
+            div.innerHTML = "SELECT * FROM employees WHERE first_name LIKE \"T%H\";";
+            div = highlightCodes(div); //here, highlightCodes(div); would work the same, as div is already present in the document, otherwise you have to div = ...;
+        }
+
+    </script>
+</body>
+</html>
